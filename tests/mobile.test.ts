@@ -44,18 +44,15 @@ test(`snapshot test on mobile`, async ({ page }) => {
         // 'body > div.MuiContainer-root.MuiContainer-disableGutters.rad-styles-8d97to > div.MuiContainer-root.MuiContainer-disableGutters.rad-styles-11x3sax > div > div.MuiGrid2-root.MuiGrid2-container.MuiGrid2-direction-xs-row.rad-styles-yaas4b > div:nth-child(1) > div',
         // 'body > div.MuiContainer-root.MuiContainer-disableGutters.rad-styles-8d97to > div.MuiContainer-root.MuiContainer-disableGutters.rad-styles-11x3sax > div > div.MuiGrid2-root.MuiGrid2-container.MuiGrid2-direction-xs-row.rad-styles-yaas4b > div:nth-child(2) > div',
         // 'body > div.MuiContainer-root.MuiContainer-disableGutters.rad-styles-8d97to > div.MuiContainer-root.MuiContainer-disableGutters.rad-styles-11x3sax > div > div.MuiGrid2-root.MuiGrid2-container.MuiGrid2-direction-xs-row.rad-styles-yaas4b > div:nth-child(3) > div',
-        'body > div.MuiContainer-root.MuiContainer-disableGutters.rad-styles-8d97to > div.MuiContainer-root.MuiContainer-disableGutters.rad-styles-11x3sax > div > div.MuiGrid2-root.MuiGrid2-container.MuiGrid2-direction-xs-row.rad-styles-yaas4b > div:nth-child(1) > div > div.MuiCardContent-root.rad-styles-1qw96cp > div.MuiChip-root.MuiChip-outlined.MuiChip-sizeMedium.MuiChip-colorPrimary.MuiChip-outlinedPrimary.rad-styles-fdrv0f > span',
-        'body > div.MuiContainer-root.MuiContainer-disableGutters.rad-styles-8d97to > div.MuiContainer-root.MuiContainer-disableGutters.rad-styles-11x3sax > div > div.MuiGrid2-root.MuiGrid2-container.MuiGrid2-direction-xs-row.rad-styles-yaas4b > div:nth-child(1) > div > div.MuiCardContent-root.rad-styles-1qw96cp > div.MuiBox-root.rad-styles-ordn4j > span',
-        'body > div.MuiContainer-root.MuiContainer-disableGutters.rad-styles-8d97to > div.MuiContainer-root.MuiContainer-disableGutters.rad-styles-11x3sax > div > div.MuiGrid2-root.MuiGrid2-container.MuiGrid2-direction-xs-row.rad-styles-yaas4b > div:nth-child(2) > div > div.MuiCardContent-root.rad-styles-1qw96cp > div.MuiChip-root.MuiChip-outlined.MuiChip-sizeMedium.MuiChip-colorPrimary.MuiChip-outlinedPrimary.rad-styles-fdrv0f > span',
-        'body > div.MuiContainer-root.MuiContainer-disableGutters.rad-styles-8d97to > div.MuiContainer-root.MuiContainer-disableGutters.rad-styles-11x3sax > div > div.MuiGrid2-root.MuiGrid2-container.MuiGrid2-direction-xs-row.rad-styles-yaas4b > div:nth-child(2) > div > div.MuiCardContent-root.rad-styles-1qw96cp > div.MuiBox-root.rad-styles-ordn4j > span',
-        'body > div.MuiContainer-root.MuiContainer-disableGutters.rad-styles-8d97to > div.MuiContainer-root.MuiContainer-disableGutters.rad-styles-11x3sax > div > div.MuiGrid2-root.MuiGrid2-container.MuiGrid2-direction-xs-row.rad-styles-yaas4b > div:nth-child(3) > div > div.MuiCardContent-root.rad-styles-1qw96cp > div.MuiChip-root.MuiChip-outlined.MuiChip-sizeMedium.MuiChip-colorPrimary.MuiChip-outlinedPrimary.rad-styles-fdrv0f > span',
-        'body > div.MuiContainer-root.MuiContainer-disableGutters.rad-styles-8d97to > div.MuiContainer-root.MuiContainer-disableGutters.rad-styles-11x3sax > div > div.MuiGrid2-root.MuiGrid2-container.MuiGrid2-direction-xs-row.rad-styles-yaas4b > div:nth-child(3) > div > div.MuiCardContent-root.rad-styles-1qw96cp > div.MuiBox-root.rad-styles-ordn4j > span',
+        'body > div.MuiContainer-root.MuiContainer-disableGutters.rad-styles-8d97to > div.MuiContainer-root.MuiContainer-disableGutters.rad-styles-11x3sax > div > div.MuiGrid2-root.MuiGrid2-container.MuiGrid2-direction-xs-row.rad-styles-yaas4b > div:nth-child(1) > div > div.MuiCardContent-root.rad-styles-1qw96cp',
+        'body > div.MuiContainer-root.MuiContainer-disableGutters.rad-styles-8d97to > div.MuiContainer-root.MuiContainer-disableGutters.rad-styles-11x3sax > div > div.MuiGrid2-root.MuiGrid2-container.MuiGrid2-direction-xs-row.rad-styles-yaas4b > div:nth-child(2) > div > div.MuiCardContent-root.rad-styles-1qw96cp',
+        'body > div.MuiContainer-root.MuiContainer-disableGutters.rad-styles-8d97to > div.MuiContainer-root.MuiContainer-disableGutters.rad-styles-11x3sax > div > div.MuiGrid2-root.MuiGrid2-container.MuiGrid2-direction-xs-row.rad-styles-yaas4b > div:nth-child(3) > div > div.MuiCardContent-root.rad-styles-1qw96cp'
     ];
 
     // Save snapshots of individual elements
     for (const [index, selector] of skipElements.entries()) {
         const element = await page.locator(selector);
-        await element.screenshot({ path: `elements/${device.userAgent}/element_${index}.png`});
+        // await element.screenshot({ path: `elements/${device.userAgent}/element_${index}.png`});
     }
 
     // Replace elements with blank divs
@@ -69,10 +66,10 @@ test(`snapshot test on mobile`, async ({ page }) => {
     let sectionIndex = 0;
 
     do {
-        let filename = `landing/${device.userAgent}/landing_${device.userAgent}_${sectionIndex}.png`;
-        await page.screenshot({ path: filename });
+        // let filename = `landing/${device.userAgent}/landing_${device.userAgent}_${sectionIndex}.png`;
+        // await page.screenshot({ path: filename });
 
-        filename = `match_${device.userAgent}_${sectionIndex}.png`
+        let filename = `match_${device.userAgent}_${sectionIndex}.png`
         expect(await page.screenshot()).toMatchSnapshot(filename);
 
         // Scroll to next page block

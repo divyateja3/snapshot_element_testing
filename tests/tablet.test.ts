@@ -60,7 +60,7 @@ test(`snapshot test on tablet`, async ({ page }) => {
     // Save snapshots of individual elements
     for (const [index, selector] of skipElements.entries()) {
         const element = await page.locator(selector);
-        await element.screenshot({ path: `elements/${device.userAgent}/element_${index}.png`});
+        // await element.screenshot({ path: `elements/${device.userAgent}/element_${index}.png`});
     }
 
     // Replace elements with blank divs
@@ -74,10 +74,10 @@ test(`snapshot test on tablet`, async ({ page }) => {
     let sectionIndex = 0;
 
     do {
-        let filename = `landing/${device.userAgent}/landing_${device.userAgent}_${sectionIndex}.png`;
-        await page.screenshot({ path: filename });
+        // let filename = `landing/${device.userAgent}/landing_${device.userAgent}_${sectionIndex}.png`;
+        // await page.screenshot({ path: filename });
 
-        filename = `match_${device.userAgent}_${sectionIndex}.png`
+        let filename = `match_${device.userAgent}_${sectionIndex}.png`
         expect(await page.screenshot()).toMatchSnapshot(filename);
 
         // Scroll to next page block
